@@ -31,7 +31,7 @@ version of what you need to do to get that awesome SQ badge.
 
 ## How to Play
 
-Before we can get you questing, we need to make sure you are actually *ready* to
+Before we can get you questing, we need to make sure you are actually _ready_ to
 quest! So, do this before you move on to anything else!
 
 **Note:** You will be required to follow this basic procedure for each of the
@@ -145,7 +145,7 @@ Stellar Quest badge!
 
 This first quest is a pretty simple one, and it comes almost directly from the
 Soroban examples, too! All we're doing here is getting our feet wet, so you
-won't need to worry about *writing* any Rust contracts, or anything like that.
+won't need to worry about _writing_ any Rust contracts, or anything like that.
 Here's what you need to know to complete this quest.
 
 ### Explore the Contract Code
@@ -153,19 +153,19 @@ Here's what you need to know to complete this quest.
 If you open up the [`lib.rs` file](src/lib.rs), you'll be able to see some
 helpful comments that briefly describe what each portion of the code is doing.
 
-*This contract accepts an argument and responds with a greeting containing that
-argument that was supplied.*
+_This contract accepts an argument and responds with a greeting containing that
+argument that was supplied._
 
 A more in-depth dissection of this example smart contract can be found in our
 [Pioneer Quest][pq-lib].
 
 ### Build the Contract
 
-We can now move on to actually *build* our contract! I know you didn't think you
+We can now move on to actually _build_ our contract! I know you didn't think you
 would make it this far. Give yourself a pat on the back!
 
-*The build process compiles our Rust code that is purpose-built for the
-WebAssembly environment that Soroban will provide for it.*
+_The build process compiles our Rust code that is purpose-built for the
+WebAssembly environment that Soroban will provide for it._
 
 If you need some instructions to help you along with this step, you can check
 out the [build tutorial][docs-build] in the Soroban documentation.
@@ -182,7 +182,7 @@ cargo build \
     --release
 ```
 
-> *Note*: We used to ship a `Makefile` with this repository which could run this
+> _Note_: We used to ship a `Makefile` with this repository which could run this
 > build command for each quest. This introduced certain bugs with unfinished
 > quests, and presented users with errors related to irrelevant quests. We no
 > longer ship that `Makefile`, and encourage users to manually build each
@@ -193,8 +193,8 @@ cargo build \
 You can also look at the [`test.rs` file](src/test.rs), and see it also has some
 helpful comments, too.
 
-*This test invokes the contract's `hello()` function, and checks to make sure
-the contract gives the expected response.*
+_This test invokes the contract's `hello()` function, and checks to make sure
+the contract gives the expected response._
 
 Once you've got an understanding of what's happening in the test scenario, go
 ahead and run the test, ensuring that our contract is behaving properly.
@@ -213,7 +213,7 @@ cd quests/1-hello-world
 cargo test
 ```
 
-> *Note*: We used to ship a `Makefile` with this repository which could run this
+> _Note_: We used to ship a `Makefile` with this repository which could run this
 > test command for each quest. This introduced certain bugs with unfinished
 > quests, and presented users with errors related to irrelevant quests. We no
 > longer ship that `Makefile`, and encourage users to manually test each
@@ -224,9 +224,9 @@ cargo test
 The Stellar Futurenet is a safe playground where your contract code can live and
 work while it is still in development and (potentially) unstable.
 
-*Deploying the contract will upload the build binary file to the Futurenet,
+_Deploying the contract will upload the build binary file to the Futurenet,
 making it readily available for invocation and use in the network's Soroban
-environment.*
+environment._
 
 You can find some guidance on deploying your contract to the Futurenet in the
 [deploy tutorial][docs-deploy] from the Soroban documentation.
@@ -237,8 +237,8 @@ Now comes the exciting part! Your job is to **invoke** the smart contract that
 you just uploaded to the Futurenet. Doesn't it just make you want to shout with
 excitement!?
 
-*Invoking your contract will use the Stellar network to call up the contract you
-just uploaded and execute the `hello()` function.*
+_Invoking your contract will use the Stellar network to call up the contract you
+just uploaded and execute the `hello()` function._
 
 The [deploy tutorial][docs-deploy] can also give you some guidance on the finer
 points of invoking a Futurenet contract, if you need.
