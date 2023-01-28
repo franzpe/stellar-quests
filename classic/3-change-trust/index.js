@@ -10,40 +10,11 @@ const {
 } = require("stellar-sdk");
 
 const { config } = require("dotenv");
+const { submitTtransaction, fundAddress } = require("../_shared");
 
 config();
 
 const server = new Server("https://horizon-testnet.stellar.org");
-
-const fundAddress = async (keypair, qAccount, qKeypair) => {
-  const transaction = new TransactionBuilder(qAccount, {
-    fee: BASE_FEE,
-    networkPassphrase: Networks.TESTNET,
-  })
-    .addOperation(
-      Operation.createAccount({
-        destination: keypair.publicKey(),
-        startingBalance: "1000",
-      })
-    )
-    .setTimeout(30)
-    .build();
-
-  transaction.sign(qKeypair);
-
-  try {
-    let res = await server.submitTransaction(transaction);
-    console.log(`Transaction Successful! Hash: ${res.hash}`);
-  } catch (error) {
-    console.log(
-      `${error}. More details:\n${JSON.stringify(
-        error.response.data.extras,
-        null,
-        2
-      )}`
-    );
-  }
-};
 
 const main = async () => {
   // We'll need two keypairs for this transaction: our quest keypair (the one trusting the asset), and an issuer keypair (the one issuing the asset).
@@ -52,7 +23,7 @@ const main = async () => {
 
   // We set up the server and account that will be used to build and submit the transaction.
   const questAccount = await server.loadAccount(questKeypair.publicKey());
-  await fundAddress(issuerKeypair, questAccount, questKeypair);
+  await fundAddress(issuerKeypair, questAccount, questKeypair, server);
 
   // We'll need to create an asset for our quest account to trust. A few quick notes about assets:
   // Assets can exist in three forms: alphanumeric 4, alphanumeric 12, and liquidity pool shares.
@@ -83,18 +54,7 @@ const main = async () => {
   transaction.sign(questKeypair);
 
   // Submit transaction
-  try {
-    let res = await server.submitTransaction(transaction);
-    console.log(`Transaction Successful! Hash: ${res.hash}`);
-  } catch (error) {
-    console.log(
-      `${error}. More details:\n${JSON.stringify(
-        error.response.data.extras,
-        null,
-        2
-      )}`
-    );
-  }
+  await submitTtransaction(transaction, server);
 };
 
 main();

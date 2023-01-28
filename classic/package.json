@@ -1,0 +1,10 @@
+{
+  "author": "Frank Pobocek <pobocekfrantisek@gmail.com",
+  "licence": "MIT",
+  "private": true,
+  "workspaces": [
+    "1-create-account",
+    "2-payment",
+    "3-change-trust"
+  ]
+}
