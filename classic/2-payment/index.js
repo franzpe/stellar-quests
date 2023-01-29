@@ -14,6 +14,9 @@ config();
 
 const server = new Server("https://horizon-testnet.stellar.org");
 
+/**
+ * https://quest.stellar.org/learn/series/1/quest/2
+ */
 const fundAddress = async (keypair, qAccount, qKeypair) => {
   const transaction = new TransactionBuilder(qAccount, {
     fee: BASE_FEE,

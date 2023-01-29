@@ -16,6 +16,9 @@ config();
 
 const server = new Server("https://horizon-testnet.stellar.org");
 
+/**
+ * https://quest.stellar.org/learn/series/1/quest/3
+ */
 const main = async () => {
   // We'll need two keypairs for this transaction: our quest keypair (the one trusting the asset), and an issuer keypair (the one issuing the asset).
   const questKeypair = Keypair.fromSecret(process.env.SK);
