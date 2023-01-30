@@ -7,6 +7,7 @@
     "2-payment",
     "3-change-trust",
     "4-manage-offers",
-    "5-path-payments"
+    "5-path-payments",
+    "6-account-merge"
   ]
 }
