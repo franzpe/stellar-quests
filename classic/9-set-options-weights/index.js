@@ -12,7 +12,7 @@ const { config } = require("dotenv");
 config();
 
 /**
- * https://quest.stellar.org/learn/series/2/quest/3
+ * https://quest.stellar.org/learn/series/2/quest/4
  */
 const main = async () => {
   const questKeypair = Keypair.fromSecret(process.env.SK);
