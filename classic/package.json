@@ -8,6 +8,14 @@
     "3-change-trust",
     "4-manage-offers",
     "5-path-payments",
-    "6-account-merge"
+    "6-account-merge",
+    "7-manage-data",
+    "8-set-options",
+    "9-set-options-weights",
+    "11-bump-sequence",
+    "12-sponsorships",
+    "13-claimable-balances",
+    "14-clawbacks",
+    "15-liquidity-1pools"
   ]
 }
